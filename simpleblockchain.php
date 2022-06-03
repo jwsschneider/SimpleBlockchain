@@ -32,10 +32,6 @@ else {
     $new_block->id = ($i+1)."";
 }
 
-
-$new_block->ip = $_SERVER["REMOTE_ADDR"];
-$new_block->platform = $_SERVER["HTTP_USER_AGENT"];
-$new_block->browser = $_SERVER["HTTP_SEC_CH_UA"];
 $new_block->hash = $new_block->gen_hash();
 
 $blockchain->add_block($new_block);

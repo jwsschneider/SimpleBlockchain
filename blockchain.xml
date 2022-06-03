@@ -1,4 +1,2 @@
 <?xml version="1.0"?>
-<blocks>
-
-</blocks>
+<blocks><block><id>0</id><timestamp>2022-06-03 14:46:21</timestamp><last_hash>N/A</last_hash><hash>83d0ca98a9a8ed6e38608342b454c1d6</hash></block><block><id>1</id><timestamp>2022-06-03 14:46:25</timestamp><last_hash>83d0ca98a9a8ed6e38608342b454c1d6</last_hash><hash>a37a33261cea0de390ec5236186d14a3</hash></block><block><id>2</id><timestamp>2022-06-03 14:47:16</timestamp><last_hash>a37a33261cea0de390ec5236186d14a3</last_hash><hash>d9333ec06bd2bae2a8d71de26c569907</hash></block><block><id>3</id><timestamp>2022-06-03 14:47:19</timestamp><last_hash>d9333ec06bd2bae2a8d71de26c569907</last_hash><hash>b4f0338ec68f6f6c641376a5b10d4cd7</hash></block></blocks>

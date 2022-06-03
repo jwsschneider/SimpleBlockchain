@@ -28,10 +28,6 @@ class Blockchain
             $current_block->timestamp = $current_block_xml->timestamp;
             $current_block->last_hash = $current_block_xml->last_hash;
             $current_block->hash = $current_block_xml->hash;
-            $current_block->ip = $current_block_xml->ip;
-            $current_block->platform = $current_block_xml->platform;
-            $current_block->browser = $current_block_xml->browser;
-            
                        
             array_push($blockchain->bc, $current_block);
             
@@ -54,9 +50,6 @@ class Blockchain
             $block_xml->addChild("timestamp", $block->timestamp);
             $block_xml->addChild("last_hash", $block->last_hash);
             $block_xml->addChild("hash", $block->hash);
-            $block_xml->addChild("ip", $block->ip);
-            $block_xml->addChild("platform", $block->platform);
-            $block_xml->addChild("browser", $block->browser);
                         
         } // foreach
         
@@ -109,45 +102,13 @@ class Blockchain
                       style='color:black;mso-color-alt:windowtext'> = </span> ".$block->timestamp."</p>
                       </td>
                      </tr>
-                     <tr style='mso-yfti-irow:2'>
-                      <td width=102 valign=top style='width:76.25pt;background:#00B0F0;padding:
-                      0in 5.4pt 0in 5.4pt'>
-                      <p class=MsoNormal><o:p>&nbsp;</o:p></p>
-                      </td>
-                      <td width=522 valign=top style='width:391.25pt;background:#F2F2F2;mso-background-themecolor:
-                      background1;mso-background-themeshade:242;padding:0in 5.4pt 0in 5.4pt'>
-                      <p class=MsoNormal><b><span style='color:black;mso-color-alt:windowtext'>IP Address</span></b><span
-                      style='color:black;mso-color-alt:windowtext'> = </span>".$block->ip."</p>
-                      </td>
-                     </tr>
-                     <tr style='mso-yfti-irow:3'>
-                      <td width=102 valign=top style='width:76.25pt;background:#00B0F0;padding:
-                      0in 5.4pt 0in 5.4pt'>
-                      <p class=MsoNormal><o:p>&nbsp;</o:p></p>
-                      </td>
-                      <td width=522 valign=top style='width:391.25pt;background:#D9D9D9;mso-background-themecolor:
-                      background1;mso-background-themeshade:217;padding:0in 5.4pt 0in 5.4pt'>
-                      <p class=MsoNormal><b><span style='color:black;mso-color-alt:windowtext'>Platform</span></b><span
-                      style='color:black;mso-color-alt:windowtext'> = </span>".$block->platform."</p>
-                      </td>
-                     </tr>
-                     <tr style='mso-yfti-irow:4'>
-                      <td width=102 valign=top style='width:76.25pt;background:#00B0F0;padding:
-                      0in 5.4pt 0in 5.4pt'>
-                      <p class=MsoNormal><o:p>&nbsp;</o:p></p>
-                      </td>
-                      <td width=522 valign=top style='width:391.25pt;background:#F2F2F2;mso-background-themecolor:
-                      background1;mso-background-themeshade:242;padding:0in 5.4pt 0in 5.4pt'>
-                      <p class=MsoNormal><b><span style='color:black;mso-color-alt:windowtext'>Browser</span></b><span
-                      style='color:black;mso-color-alt:windowtext'> = </span>".$block->browser."</p>
-                      </td>
-                     </tr>
+
                      <tr style='mso-yfti-irow:5'>
                       <td width=102 valign=top style='width:76.25pt;background:#00B0F0;padding:
                       0in 5.4pt 0in 5.4pt'>
                       <p class=MsoNormal><o:p>&nbsp;</o:p></p>
                       </td>
-                      <td width=522 valign=top style='width:391.25pt;background:#D9D9D9;mso-background-themecolor:
+                      <td width=522 valign=top style='width:391.25pt;background:#F2F2F2;mso-background-themecolor:
                       background1;mso-background-themeshade:217;padding:0in 5.4pt 0in 5.4pt'>
                       <p class=MsoNormal><b><span style='color:black;mso-color-alt:windowtext'>Block’s
                       HASH</span></b><span style='color:black;mso-color-alt:windowtext'> = </span>".$block->hash."</p>
@@ -158,7 +119,7 @@ class Blockchain
                       0in 5.4pt 0in 5.4pt'>
                       <p class=MsoNormal><o:p>&nbsp;</o:p></p>
                       </td>
-                      <td width=522 valign=top style='width:391.25pt;background:#F2F2F2;mso-background-themecolor:
+                      <td width=522 valign=top style='width:391.25pt;background:#D9D9D9;mso-background-themecolor:
                       background1;mso-background-themeshade:242;padding:0in 5.4pt 0in 5.4pt'>
                       <p class=MsoNormal><b><span style='color:black;mso-color-alt:windowtext'>Previous
                       Block’s HASH</span></b><span style='color:black;mso-color-alt:windowtext'> = </span>".$block->last_hash."</p>
