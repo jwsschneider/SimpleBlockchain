@@ -10,8 +10,10 @@ sleep(1);
 
 $blockchain = new Blockchain();
 
+// load blockchain from XML
 $blockchain = $blockchain->load_blockchain("./blockchain.xml");
 
+// create new block, fill with timestamp information
 $new_block = new Block();
 
 $datetime = new DateTime();
@@ -32,10 +34,13 @@ else {
     $new_block->id = ($i+1)."";
 }
 
+// generate has for new block
 $new_block->hash = $new_block->gen_hash();
 
+// add the block object to the blockchain
 $blockchain->add_block($new_block);
 
+// save updated XML to filesystem
 $blockchain->save_blockchain("./blockchain.xml");
 
 

@@ -1,18 +1,26 @@
 <?php
+
+/*
+ * @author Jacob Schneider
+ * ipdecode.com
+ */
+
 namespace includes;
 
 
 class Blockchain
 {
     
-    public $bc;
-    public $xml;
+    public $bc; // blockchain object
+    public $xml; // XML representation of blockchain object
     
+    // constructor functions that initializes the blockchain and its XML
     function __construct() {
         $this->bc = array();
         $this->xml = new \SimpleXMLElement("<blocks></blocks>");
     }
     
+    // loads a blockchain from an XML file
     function load_blockchain($filename) {
         
         $blockchain = new Blockchain();
@@ -20,7 +28,7 @@ class Blockchain
         $blockchain->xml = simplexml_load_file($filename) or die("Error: Cannot load blockchain XML");
         
         
-        
+        // read XML file block-by-block
         foreach ($blockchain->xml->block as $current_block_xml) {
             
             $current_block = new \Block();
@@ -39,10 +47,13 @@ class Blockchain
         
     }
     
+    
+    // saves blockchain to XML file
     function save_blockchain($filename) {
         
         $this->xml = new \SimpleXMLElement("<blocks></blocks>"); // wipe the DB clean
                         
+        // save each block into the XML file
         foreach ($this->bc as $block) {
             
             $block_xml = $this->xml->addChild("block");
@@ -56,16 +67,22 @@ class Blockchain
         $this->xml->asXML($filename) or die("Error: Cannot save blockchain XML");
     }
     
+    
+    // adds a single block to the blockchain
     function add_block($block) {
         
         array_push($this->bc, $block);
         
     }
     
+    
+    // prints all blocks in the XML file (for debugging)
     function print_blocks() {
         print_r($this->xml);
     }
     
+    
+    // prints all blocks from the blockchain as HTML
     function print_blocks_html() {
         
         $index = count($this->bc);
